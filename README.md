@@ -34,6 +34,9 @@ ord_canister= principal "o25oi-jaaaa-aaaal-ajj6a-cai";
 
 ### Wireframe
 
-- ![Homepage](/docs/swap_page.png)
-- ![pool](/docs/pools.png)
-- ![position](/docs/position.png)
+- Homepage
+  ![Homepage](/docs/swap_page.png)
+- Pools
+  ![pool](/docs/pools.png)
+- Positions
+  ![position](/docs/position.png)
