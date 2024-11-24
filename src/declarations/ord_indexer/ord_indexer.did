@@ -1,0 +1,34 @@
+type CandidRuneEntry = record {
+  id : nat;
+  runeid : CandidRuneId;
+  divisibility : nat8;
+  block : nat64;
+  runename : text;
+  symbol : opt nat32;
+};
+type CandidRuneId = record { tx : nat32; block : nat64 };
+type MintError = variant { Cap : nat; End : nat64; Start : nat64; Unmintable };
+type OrdError = variant {
+  Rpc : RpcError;
+  Overflow;
+  Params : text;
+  Index : MintError;
+  BlockVerification : nat32;
+};
+type Result = variant { Ok; Err : text };
+type Result_1 = variant { Ok : record { nat32; text }; Err : OrdError };
+type Result_2 = variant { Ok : vec RuneBalance; Err : OrdError };
+type RpcError = variant {
+  Io : record { text; text; text };
+  Endpoint : record { text; text; text };
+  Decode : record { text; text; text };
+};
+type RuneBalance = record { id : RuneId; balance : nat };
+type RuneId = record { tx : nat32; block : nat64 };
+service : (text, text) -> {
+  admin_set_url : (text) -> (Result);
+  get_50_rune_entries : () -> (vec CandidRuneEntry) query;
+  get_height : () -> (Result_1) query;
+  get_rune_entry_by_runeid : (CandidRuneId) -> (opt CandidRuneEntry) query;
+  get_runes_by_utxo : (text, nat32) -> (Result_2) query;
+}

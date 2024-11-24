@@ -1,0 +1,86 @@
+type Account = record { owner : principal; subaccount : opt blob };
+type AddLiquidityArgs = record {
+  amount1_min : nat64;
+  amount0_desired : nat64;
+  amount0_min : nat64;
+  token0 : TokenType;
+  token1 : TokenType;
+  amount1_desired : nat64;
+};
+type AddLiquidityResult = record {
+  txids : vec SubmittedTransactionIdType;
+  liquidity : nat64;
+};
+type BitcoinNetwork = variant { mainnet; regtest; testnet };
+type CreatePairArgs = record { token0 : TokenType; token1 : TokenType };
+type DepositAddresses = record {
+  account_identifier : blob;
+  account : Account;
+  bitcoin : text;
+  account_identifier_string : text;
+  account_string : text;
+};
+type InitArgs = record {
+  auth : opt principal;
+  commission_receiver_btc : text;
+  commission_receiver_icp : opt blob;
+  commission_receiver_principal : opt principal;
+  bitcoin_network : BitcoinNetwork;
+  ord_canister : principal;
+};
+type PoolDetailsQuery = record {
+  reserve0 : nat64;
+  reserve1 : nat64;
+  last_updated : nat64;
+  created_at : nat64;
+  token0 : TokenType;
+  token1 : TokenType;
+  k_last : nat64;
+  pool_id : nat;
+  total_supply : nat64;
+};
+type RemoveLiquidityArgs = record {
+  amount1_min : nat64;
+  liquidity : nat64;
+  amount0_min : nat64;
+  token0 : TokenType;
+  token1 : TokenType;
+};
+type RemoveLiquidityResult = record { txids : vec SubmittedTransactionIdType };
+type RuneId = record { tx : nat32; block : nat64 };
+type SubmittedTransactionIdType = variant {
+  Icp : record { txid : nat64 };
+  Icrc1 : record { txid : nat };
+  Bitcoin : record { txid : text };
+};
+type SwapArgs = record {
+  amount_out_min : nat64;
+  token_in : TokenType;
+  amount_in : nat64;
+  token_out : TokenType;
+};
+type SwapResult = record {
+  txids : vec SubmittedTransactionIdType;
+  amount_received : nat64;
+};
+type TokenType = variant { Icp; Runestone : RuneId; Bitcoin; CkBTC };
+type WithdrawalType = variant {
+  Icp : record { to : text; amount : nat64 };
+  Runestone : record {
+    to : text;
+    fee_per_vbytes : opt nat64;
+    runeid : RuneId;
+    amount : nat;
+  };
+  Bitcoin : record { to : text; fee_per_vbytes : opt nat64; amount : nat64 };
+};
+service : (InitArgs) -> {
+  add_liquidity : (AddLiquidityArgs) -> (AddLiquidityResult);
+  create_pair : (CreatePairArgs) -> (PoolDetailsQuery);
+  get_deposit_addresses : () -> (DepositAddresses) query;
+  get_pair_info : (TokenType, TokenType) -> (PoolDetailsQuery) query;
+  get_pairs : (opt nat) -> (vec PoolDetailsQuery) query;
+  remove_liquidity : (RemoveLiquidityArgs) -> (RemoveLiquidityResult);
+  swap_exact_tokens_for_tokens : (SwapArgs) -> (SwapResult);
+  withdraw : (WithdrawalType) -> (SubmittedTransactionIdType);
+}
