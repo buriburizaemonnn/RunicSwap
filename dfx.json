@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "output_file_env": ".env",
+  "canisters": {
+    "swap_backend": {
+      "type": "rust",
+      "package": "swap_backend",
+      "candid": "canisters/swap_backend/swap_backend.did"
+    },
+    "ord_indexer": {
+      "type": "rust",
+      "package": "ord_canister",
+      "candid": "canisters/ord_canister/ord_indexer.did"
+    }
+  }
+}

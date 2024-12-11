@@ -1,0 +1,45 @@
+[package]
+name = "ord_canister"
+version = "0.1.0"
+authors = ["kachinsky@oct.network"]
+repository = "https://github.com/octopus-network/ord-canister"
+license = "MIT"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+candid = "0.10"
+ic-cdk = "0.17"
+ic-cdk-macros = "0.17.0"
+ic-cdk-timers = "0.11"
+ic-stable-memory = "0.4.1"
+ic-stable-memory-derive = "0.4.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+syn = "1.0"
+anyhow =  "1"
+thiserror = "1"
+generic-array = "0.14"
+cfg-if = "1.0"
+hex = "0.4.3"
+core2 = "0.3"
+bitcoin = { version = "0.30.2", default-features = false }
+bitcoincore-rpc-json = { version = "0.19.0", default-features = false }
+bip39 = "2.0.0"
+hex-literal = "0.4.1"
+lazy_static = "1.4"
+ordinals = { git = "https://github.com/octopus-network/ord-canister" }
+sha2 = "0.10.8"
+rune-indexer-interface = { git = "https://github.com/octopus-network/ord-canister" }
+ic-canisters-http-types = { git = "https://github.com/dfinity/ic", tag = "release-2024-03-06_23-01+p2p" }
+ic-canister-log = { git = "https://github.com/dfinity/ic", tag = "release-2024-01-18_23-01" }
+serde_derive = "1.0"
+time = "0.3"
+getrandom = { version = "0.2.15", features = ["custom"] }
+ic-crypto-secp256k1 = { git = "https://github.com/dfinity/ic.git" }
+
+[features]
+cmp-header = []
+default = []

@@ -1,0 +1,50 @@
+type Account = record { owner : principal; subaccount : opt blob };
+type AddLiquidityArgs = record {
+  amount1_min : nat64;
+  amount0_desired : nat64;
+  amount0_min : nat64;
+  token0 : TokenType;
+  token1 : TokenType;
+  amount1_desired : nat64;
+};
+type Addresses = record {
+  icrc1_string : text;
+  account_identifier : blob;
+  icrc1 : Account;
+  bitcoin : text;
+  account_identifier_string : text;
+};
+type BitcoinNetwork = variant { mainnet; regtest; testnet };
+type CreatePairArgs = record { token0 : TokenType; token1 : TokenType };
+type PoolInfoQuery = record {
+  reserve0 : nat64;
+  reserve1 : nat64;
+  token0 : TokenType;
+  token1 : TokenType;
+  pool_id : nat;
+  deposit_addresses : Addresses;
+};
+type RuneId = record { tx : nat32; block : nat64 };
+type SubmittedTxidType = variant {
+  Ic : record { txid : nat64 };
+  Icrc1 : record { txid : nat };
+  Bitcoin : record { txid : text };
+};
+type SwapArgs = record {
+  amount_out_min : nat64;
+  token_in : TokenType;
+  amount_in : nat64;
+  token_out : TokenType;
+};
+type SwapResult = record { txids : vec SubmittedTxidType; amount_out : nat64 };
+type TokenType = variant { Icp; Runestone : RuneId; Bitcoin; CkBTC };
+service : (BitcoinNetwork) -> {
+  add_liquidity : (AddLiquidityArgs) -> (nat64, vec SubmittedTxidType);
+  create_pair : (CreatePairArgs) -> (nat);
+  get_combined_balance : (text, RuneId) -> (vec record { TokenType; nat });
+  get_deposit_addresses : () -> (Addresses) query;
+  get_user_balance : () -> (vec record { TokenType; nat });
+  pools : () -> (vec PoolInfoQuery) query;
+  swap : (SwapArgs) -> (SwapResult);
+  test_combined_withdrawal : (RuneId, nat, nat64, text) -> (SubmittedTxidType);
+}
