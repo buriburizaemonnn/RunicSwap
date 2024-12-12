@@ -8,6 +8,12 @@ With a Uniswap v2-inspired AMM model, RunicSwap simplifies token listing for new
 
 Explore, trade, and contribute to the future of decentralized Runestone trading!
 
+### TODO
+
+- Frontend Development: Design and implement the user interface.
+- ICP Support: Integrate ICP trading pairs into the exchange.
+- ckBTC Support: Enable seamless trading for ckBTC.
+
 ### [Pitch + Demo](https://youtu.be/gpu5gsdt7sA)
 
 ### Deployment Guide
