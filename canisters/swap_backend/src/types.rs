@@ -2,6 +2,8 @@ use candid::{CandidType, Decode, Deserialize, Encode};
 use ic_cdk::api::management_canister::bitcoin::Utxo;
 use ic_stable_structures::{storable::Bound, Storable};
 
+use crate::{chains::Addresses, txn_handler::TransactionType};
+
 #[derive(CandidType, Deserialize, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]
 pub struct RuneId {
     pub block: u64,
