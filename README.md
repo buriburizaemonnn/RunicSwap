@@ -10,6 +10,17 @@ Explore, trade, and contribute to the future of decentralized Runestone trading!
 
 ### [Pitch + Demo](https://youtu.be/gpu5gsdt7sA)
 
+### Wireframe
+
+Missing frontend, here is the wireframe for the frontend
+
+- Homepage
+  ![Homepage](/docs/swap_page.png)
+- Pools
+  ![pool](/docs/pools.png)
+- Positions
+  ![position](/docs/position.png)
+
 ### Deployment Guide
 
 ```bash
