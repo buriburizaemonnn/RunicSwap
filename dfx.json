@@ -1,0 +1,41 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "ord_indexer": {
+      "type": "rust",
+      "package": "ord_canister",
+      "candid": "canisters/ord_canister/ord_indexer.did"
+    },
+    "ic_siwb": {
+      "type": "custom",
+      "wasm": "ic_siwb/ic_siwb_provider.wasm",
+      "candid": "ic_siwb/ic_siwb_provider.did",
+      "gzip": true
+    },
+    "backend": {
+      "type": "rust",
+      "candid": "canisters/swap_backend/backend.did",
+      "package": "swap_backend"
+    },
+    "frontend": {
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": ["dist/"],
+      "build": "npm run build",
+      "type": "assets"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

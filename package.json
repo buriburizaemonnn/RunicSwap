@@ -1,0 +1,43 @@
+{
+  "name": "runicswap",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^2.2.0",
+    "@dfinity/auth-client": "^2.2.0",
+    "@dfinity/candid": "^2.2.0",
+    "@dfinity/principal": "^2.2.0",
+    "@omnisat/lasereyes": "^0.0.130",
+    "bitcoinjs-lib": "^7.0.0-rc.0",
+    "dotenv": "^16.4.7",
+    "ic-siwb-lasereyes-connector": "^0.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
+    "vite-plugin-environment": "^1.1.3",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vite-plugin-wasm": "^3.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^5.3.3"
+  }
+}

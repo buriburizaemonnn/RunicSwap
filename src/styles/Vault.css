@@ -1,0 +1,63 @@
+.vault-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vault-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.vault-section {
+  margin-bottom: 2rem;
+}
+
+.vault-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.bitcoin-address {
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.balance-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.balance-item:last-child {
+  border-bottom: none;
+}
+
+.token-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.token-balance {
+  font-family: monospace;
+  color: #5500ff;
+}

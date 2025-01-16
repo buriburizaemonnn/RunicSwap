@@ -1,0 +1,219 @@
+.positions-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-liquidity-box {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+}
+
+.liquidity-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f8fa;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.liquidity-input input {
+  border: none;
+  outline: none;
+  font-size: 24px;
+  width: 50%;
+  background-color: transparent;
+}
+
+.add-liquidity-button {
+  width: 100%;
+  background-color: #5500ff;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-liquidity-button:hover {
+  background-color: #4400cc;
+}
+
+.message-box {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  animation:
+    fadeIn 0.5s,
+    fadeOut 0.5s 4.5s;
+}
+
+.positions-list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.position-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.position-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.token-pair {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.token-separator {
+  margin: 0 8px;
+  color: #888;
+}
+
+.pool-id {
+  font-size: 14px;
+  color: #888;
+}
+
+.position-details {
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.detail-label {
+  color: #666;
+}
+
+.detail-value {
+  font-weight: 600;
+}
+
+.remove-liquidity-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.remove-liquidity-controls input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  outline: none;
+}
+
+.remove-liquidity-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5500ff;
+  cursor: pointer;
+}
+
+.remove-liquidity-controls input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5500ff;
+  cursor: pointer;
+}
+
+.remove-liquidity-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-liquidity-amount {
+  font-weight: 600;
+}
+
+.remove-liquidity-percentage {
+  color: #888;
+}
+
+.remove-liquidity-controls button {
+  background-color: #ff3366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.remove-liquidity-controls button:hover {
+  background-color: #e6004c;
+}
+
+.no-positions {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

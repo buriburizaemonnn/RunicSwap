@@ -1,0 +1,141 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5500ff;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-link {
+  color: #4a5568;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s,
+    border-bottom-color 0.2s;
+}
+
+.navbar-link:hover {
+  color: #2d3748;
+}
+
+.navbar-link.active {
+  color: #5500ff;
+  border-bottom-color: #5500ff;
+}
+
+.navbar-actions {
+  position: relative;
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown-toggle {
+  background-color: #5500ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.navbar-dropdown-toggle:hover {
+  background-color: #4400cc;
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 10;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.navbar-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.navbar-dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar-connect-button {
+  background-color: #5500ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.navbar-connect-button:hover {
+  background-color: #4400cc;
+}
+
+@media (max-width: 640px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-content {
+    justify-content: space-between;
+  }
+}

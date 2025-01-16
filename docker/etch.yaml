@@ -1,0 +1,17 @@
+mode: separate-outputs
+
+etching:
+  rune: THESE.WILL.BE.WORTHLESS
+  divisibility: 1
+  symbol: "A"
+  premine: 2002000
+  supply: 12002000
+  terms:
+    cap: 10000000
+    offset:
+      end: 1000000
+    amount: 1
+  turbo: true
+
+inscriptions:
+  - file: /data/ic_logo.png
